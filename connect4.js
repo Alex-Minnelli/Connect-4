@@ -29,24 +29,52 @@ function win() {
 		disable();
 	}
 
-	for (var row = 0; row < array.length; row++){
-		for (var col = 0; col < array[0].length-4; col++){
-			if (array[row][col] == 'X' && array[row][col+1] == 'X' && array[row][col+2] == 'X' && array[row][col+3] == 'X'){
+	//searches diagonal left
+	for (var col = 0; col < array.length-3; col++){
+		for (var row = 0; row < array[0].length-3; row++){
+			if (array[col][row] == 'X' && array[col+1][row+1] == 'X' && array[col+2][row+2] == 'X' && array[col+3][row+3] == 'X'){
 				document.getElementById('print').innerHTML = "The Red Player Won";
 				disable();
-			} else if (array[row][col] == 'O' && array[row][col+1] == 'O' && array[row][col+2] == 'O' && array[row][col+3] == 'O'){
+			} else if (array[col][row] == 'O' && array[col+1][row+1] == 'O' && array[col+2][row+2] == 'O' && array[col+3][row+3] == 'O'){
 				document.getElementById('print').innerHTML = "The Yellow Player Won";
 				disable();
 			}
 		}
 	}
 
-	for (var col = 0; col < array[0].length; col++){
-		for (var row = 0; row < array.length-3; row++){
-			if (array[row][col] == 'X' && array[row+1][col] == 'X' && array[row+2][col] == 'X' && array[row+3][col] == 'X'){
+	//searches diagonal right
+	for (var col = 0; col < array.length; col++){
+		for (var row = 0; row < array[0].length; row++){
+			if (array[col][row] == 'X' && array[col+1][row-1] == 'X' && array[col+2][row-2] == 'X' && array[col+3][row-3] == 'X'){
 				document.getElementById('print').innerHTML = "The Red Player Won";
 				disable();
-			} else if (array[row][col] == 'O' && array[row+1][col] == 'O' && array[row+2][col] == 'O' && array[row+3][col] == 'O'){
+			} else if (array[col][row] == 'O' && array[col+1][row+1] == 'O' && array[col+2][row+2] == 'O' && array[col+3][row+3] == 'O'){
+				document.getElementById('print').innerHTML = "The Yellow Player Won";
+				disable();
+			}
+		}
+	}
+
+	//Searches rows
+	for (var col = 0; col < array.length; col++){
+		for (var row = 0; row < array[0].length-4; row++){
+			if (array[col][row] == 'X' && array[col][row+1] == 'X' && array[col][row+2] == 'X' && array[col][row+3] == 'X'){
+				document.getElementById('print').innerHTML = "The Red Player Won";
+				disable();
+			} else if (array[col][row] == 'O' && array[col][row+1] == 'O' && array[col][row+2] == 'O' && array[col][row+3] == 'O'){
+				document.getElementById('print').innerHTML = "The Yellow Player Won";
+				disable();
+			}
+		}
+	}
+
+	//searches columns
+	for (var row = 0; row < array[0].length; row++){
+		for (var col = 0; col < array.length-3; col++){
+			if (array[col][row] == 'X' && array[col+1][row] == 'X' && array[col+2][row] == 'X' && array[col+3][row] == 'X'){
+				document.getElementById('print').innerHTML = "The Red Player Won";
+				disable();
+			} else if (array[col][row] == 'O' && array[col+1][row] == 'O' && array[col+2][row] == 'O' && array[col+3][row] == 'O'){
 				document.getElementById('print').innerHTML = "The Yellow Player Won";
 				disable();
 			}
@@ -56,10 +84,6 @@ function win() {
 	let array2 = [b11, b21, b31, b41, b12, b22, b32, b42, b13, b23, b33, b43]
 	let array3 = [[b13, b23, b33, b43],[b12, b22, b32, b42],[b11, b21, b31, b41]]
 
-	for (var i = 0; i < array3.length; i++){
-		for (var j = 0; j < array3[0].length; j++)
-		console.log(array.indexOf(array3[i][j]));
-	}
 
 
 }
@@ -96,42 +120,49 @@ function play(s) {
 		switch (s){
 			case 1:
 				document.getElementById(column1[count1]).value = "X";
+				document.getElementById(column1[count1]).style.color = "red";
 				document.getElementById(column1[count1]).style.backgroundColor = "red";
 				document.getElementById(column1[count1]).disabled = true;
 				count1++;
 				break;
 			case 2:
 				document.getElementById(column2[count2]).value = "X";
+				document.getElementById(column2[count2]).style.color = "red";
 				document.getElementById(column2[count2]).style.backgroundColor = "red";
 				document.getElementById(column2[count2]).disabled = true;
 				count2++;
 				break;
 			case 3:
 				document.getElementById(column3[count3]).value = "X";
+				document.getElementById(column3[count3]).style.color = "red";
 				document.getElementById(column3[count3]).style.backgroundColor = "red";
 				document.getElementById(column3[count3]).disabled = true;
 				count3++;
 				break;
 			case 4:
 				document.getElementById(column4[count4]).value = "X";
+				document.getElementById(column4[count4]).style.color = "red";
 				document.getElementById(column4[count4]).style.backgroundColor = "red";
 				document.getElementById(column4[count4]).disabled = true;
 				count4++;
 				break;
 			case 5:
 				document.getElementById(column5[count5]).value = "X";
+				document.getElementById(column5[count5]).style.color = "red";
 				document.getElementById(column5[count5]).style.backgroundColor = "red";
 				document.getElementById(column5[count5]).disabled = true;
 				count5++;
 				break;
 			case 6:
 				document.getElementById(column6[count6]).value = "X";
+				document.getElementById(column6[count6]).style.color = "red";
 				document.getElementById(column6[count6]).style.backgroundColor = "red";
 				document.getElementById(column6[count6]).disabled = true;
 				count6++;
 				break;
 			case 7:
 				document.getElementById(column7[count7]).value = "X";
+				document.getElementById(column7[count7]).style.color = "red";
 				document.getElementById(column7[count7]).style.backgroundColor = "red";
 				document.getElementById(column7[count7]).disabled = true;
 				count7++;
@@ -143,42 +174,49 @@ function play(s) {
 		switch (s){
 			case 1:
 				document.getElementById(column1[count1]).value = "O";
+				document.getElementById(column1[count1]).style.color = "yellow";
 				document.getElementById(column1[count1]).style.backgroundColor = "yellow";
 				document.getElementById(column1[count1]).disabled = true;
 				count1++;
 				break;
 			case 2:
 				document.getElementById(column2[count2]).value = "O";
+				document.getElementById(column2[count2]).style.color = "yellow";
 				document.getElementById(column2[count2]).style.backgroundColor = "yellow";
 				document.getElementById(column2[count2]).disabled = true;
 				count2++;
 				break;
 			case 3:
 				document.getElementById(column3[count3]).value = "O";
+				document.getElementById(column3[count3]).style.color = "yellow";
 				document.getElementById(column3[count3]).style.backgroundColor = "yellow";
 				document.getElementById(column3[count3]).disabled = true;
 				count3++;
 				break;
 			case 4:
 				document.getElementById(column4[count4]).value = "O";
+				document.getElementById(column4[count4]).style.color = "yellow";
 				document.getElementById(column4[count4]).style.backgroundColor = "yellow";
 				document.getElementById(column4[count4]).disabled = true;
 				count4++;
 				break;
 			case 5:
 				document.getElementById(column5[count5]).value = "O";
+				document.getElementById(column5[count5]).style.color = "yellow";
 				document.getElementById(column5[count5]).style.backgroundColor = "yellow";
 				document.getElementById(column5[count5]).disabled = true;
 				count5++;
 				break;
 			case 6:
 				document.getElementById(column6[count6]).value = "O";
+				document.getElementById(column6[count6]).style.color = "yellow";
 				document.getElementById(column6[count6]).style.backgroundColor = "yellow";
 				document.getElementById(column6[count6]).disabled = true;
 				count6++;
 				break;
 			case 7:
 				document.getElementById(column7[count7]).value = "O";
+				document.getElementById(column7[count7]).style.color = "yellow";
 				document.getElementById(column7[count7]).style.backgroundColor = "yellow";
 				document.getElementById(column7[count7]).disabled = true;
 				count7++;

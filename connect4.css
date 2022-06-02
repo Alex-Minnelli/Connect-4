@@ -5,11 +5,11 @@
 	}
 
 	input {
-		width: 80px;
-		height: 52px;
+		width: 55px;
+		height: 55px;
 		margin: auto;
 		border: 1px solid purple;
-		border-radius: 6px;
+		border-radius: 50px;
 		font-size: 30px;
 		text-align: center;
 	}
