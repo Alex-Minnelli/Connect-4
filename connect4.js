@@ -29,32 +29,6 @@ function win() {
 		disable();
 	}
 
-	//searches diagonal left
-	for (var col = 0; col < array.length-3; col++){
-		for (var row = 0; row < array[0].length-3; row++){
-			if (array[col][row] == 'X' && array[col+1][row+1] == 'X' && array[col+2][row+2] == 'X' && array[col+3][row+3] == 'X'){
-				document.getElementById('print').innerHTML = "The Red Player Won";
-				disable();
-			} else if (array[col][row] == 'O' && array[col+1][row+1] == 'O' && array[col+2][row+2] == 'O' && array[col+3][row+3] == 'O'){
-				document.getElementById('print').innerHTML = "The Yellow Player Won";
-				disable();
-			}
-		}
-	}
-
-	//searches diagonal right
-	for (var col = 0; col < array.length; col++){
-		for (var row = 0; row < array[0].length; row++){
-			if (array[col][row] == 'X' && array[col+1][row-1] == 'X' && array[col+2][row-2] == 'X' && array[col+3][row-3] == 'X'){
-				document.getElementById('print').innerHTML = "The Red Player Won";
-				disable();
-			} else if (array[col][row] == 'O' && array[col+1][row+1] == 'O' && array[col+2][row+2] == 'O' && array[col+3][row+3] == 'O'){
-				document.getElementById('print').innerHTML = "The Yellow Player Won";
-				disable();
-			}
-		}
-	}
-
 	//Searches rows
 	for (var col = 0; col < array.length; col++){
 		for (var row = 0; row < array[0].length-4; row++){
@@ -81,11 +55,31 @@ function win() {
 		}
 	}
 
-	let array2 = [b11, b21, b31, b41, b12, b22, b32, b42, b13, b23, b33, b43]
-	let array3 = [[b13, b23, b33, b43],[b12, b22, b32, b42],[b11, b21, b31, b41]]
+	//searches diagonal left
+	for (var col = 0; col < array.length-3; col++){
+		for (var row = 0; row < array[0].length-3; row++){
+			if (array[col][row] == 'X' && array[col+1][row+1] == 'X' && array[col+2][row+2] == 'X' && array[col+3][row+3] == 'X'){
+				document.getElementById('print').innerHTML = "The Red Player Won";
+				disable();
+			} else if (array[col][row] == 'O' && array[col+1][row+1] == 'O' && array[col+2][row+2] == 'O' && array[col+3][row+3] == 'O'){
+				document.getElementById('print').innerHTML = "The Yellow Player Won";
+				disable();
+			}
+		}
+	}
 
-
-
+	//searches diagonal right
+	for (var col = 0; col < array.length; col++){
+		for (var row = 0; row < array[0].length; row++){
+			if (array[col][row] == 'X' && array[col+1][row-1] == 'X' && array[col+2][row-2] == 'X' && array[col+3][row-3] == 'X'){
+				document.getElementById('print').innerHTML = "The Red Player Won";
+				disable();
+			} else if (array[col][row] == 'O' && array[col+1][row-1] == 'O' && array[col+2][row-2] == 'O' && array[col+3][row-3] == 'O'){
+				document.getElementById('print').innerHTML = "The Yellow Player Won";
+				disable();
+			}
+		}
+	}
 }
 
 function reset() {
