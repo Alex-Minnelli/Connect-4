@@ -1,0 +1,53 @@
+<style>
+	h1 {
+		color: orangered;
+		font-size: 45px;
+	}
+
+	input {
+		width: 80px;
+		height: 52px;
+		margin: auto;
+		border: 1px solid purple;
+		border-radius: 6px;
+		font-size: 30px;
+		text-align: center;
+	}
+
+	#but {
+		box-sizing: border-box;
+		width: 95px;
+		height: 40px;
+		border: 1px solid purple;
+		margin: auto;
+		border-radius: 4px;
+		font-family: Verdana,
+			Geneva, Tahoma, sans-serif;
+
+		background-color: purple;
+		color: white;
+		font-size: 20px;
+		cursor: pointer;
+	}
+
+	#print {
+		font-family: Verdana,
+			Geneva, Tahoma, sans-serif;
+
+		color: purple;
+		font-size: 20px;
+	}
+
+	#main {
+		text-align: center;
+	}
+
+	/* Game Instruction Text */
+	#ins {
+		font-family: Verdana,
+			Geneva, Tahoma, sans-serif;
+
+		color: purple;
+		font-size: 17px;
+	}
+</style>
