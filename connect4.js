@@ -111,6 +111,8 @@ function disable() {
 function play(s) {
 
 	if (flag == 1){
+		document.getElementById('yellowTurn').style.display = "none";
+		document.getElementById('redTurn').style.display = "initial";
 		switch (s){
 			case 1:
 				document.getElementById(column1[count1]).value = "X";
@@ -164,7 +166,9 @@ function play(s) {
 		}
 		flag = 0;
 	}
-	else {
+	else if (flag == 0){
+		document.getElementById('redTurn').style.display = "none";
+		document.getElementById('yellowTurn').style.display = "initial";
 		switch (s){
 			case 1:
 				document.getElementById(column1[count1]).value = "O";

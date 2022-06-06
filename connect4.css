@@ -1,4 +1,7 @@
-<style>
+	body {
+		background-color: #444;
+	}
+
 	h1 {
 		color: orangered;
 		font-size: 45px;
@@ -12,6 +15,14 @@
 		border-radius: 50px;
 		font-size: 30px;
 		text-align: center;
+	}
+
+	#redTurn {
+		color: yellow;
+	}
+
+	#yellowTurn {
+		color: red;
 	}
 
 	#but {
@@ -50,4 +61,3 @@
 		color: purple;
 		font-size: 17px;
 	}
-</style>
